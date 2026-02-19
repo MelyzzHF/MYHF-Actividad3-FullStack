@@ -3,19 +3,21 @@ const mysql = require('mysql2');
 const cors = require('cors');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
+require('dotenv').config();
 
 
 const app = express();
 app.use(cors());
 app.use(express.json());
-const PORT = 3000;
-const SECRET_KEY = 'clave_secreta_pro';
+
+const PORT = process.env.PORT;
+const SECRET_KEY = process.env.SECRET_KEY;
 
 const db = mysql.createConnection({
-    host: '127.0.0.1',
-    user: 'root',
-    password: "admin",
-    database: 'sweet_home_db'
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME
 });
 
 function autenticarToken(req, res, next) {
