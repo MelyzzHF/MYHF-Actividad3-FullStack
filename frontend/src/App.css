@@ -1,0 +1,401 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lora:wght@400;500&display=swap');
+
+:root {
+  --cream: #FDF6EC;
+  --warm-white: #FFFDF9;
+  --chocolate: #3C1518;
+  --chocolate-light: #5C2B2E;
+  --caramel: #C8956C;
+  --caramel-light: #E2B98F;
+  --rose: #C4756E;
+  --rose-light: #E8ADA6;
+  --text-primary: #2C1810;
+  --text-secondary: #6B4C3B;
+  --text-muted: #9B8578;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lora', Georgia, serif;
+  background: var(--cream);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+#root {
+  width: 100%;
+}
+
+
+.inicioSesion {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.inicioSesion h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: var(--chocolate);
+  margin-bottom: 1.5rem;
+}
+
+.registrarse {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  width: 100%;
+  max-width: 360px;
+}
+
+.registrarse input,
+.registrarse select {
+  font-family: 'Lora', serif;
+  font-size: 0.95rem;
+  padding: 0.8rem 1rem;
+  border: 2px solid var(--caramel-light);
+  border-radius: 10px;
+  background: var(--warm-white);
+  color: var(--text-primary);
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.registrarse input:focus,
+.registrarse select:focus {
+  border-color: var(--caramel);
+}
+
+.registrarse input::placeholder {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.registrarse button {
+  padding: 0.85rem;
+  background: var(--chocolate);
+  color: var(--cream);
+  border: none;
+  border-radius: 10px;
+  font-family: 'Lora', serif;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.registrarse button:hover {
+  background: var(--chocolate-light);
+  transform: translateY(-2px);
+}
+
+.inicioSesion > button {
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background: transparent;
+  color: var(--caramel);
+  border: 2px solid var(--caramel-light);
+  border-radius: 10px;
+  font-family: 'Lora', serif;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.inicioSesion > button:hover {
+  background: var(--caramel);
+  color: white;
+}
+
+
+.barra {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: var(--warm-white);
+  border-bottom: 2px solid var(--caramel-light);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+#tituloPrincipal {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: var(--chocolate);
+}
+
+.barra button {
+  font-family: 'Lora', serif;
+  font-size: 0.85rem;
+  padding: 0.5rem 1.2rem;
+  border: 2px solid var(--rose-light);
+  background: transparent;
+  color: var(--rose);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.barra button:hover {
+  background: var(--rose);
+  color: white;
+}
+
+
+.contenedorGeneral {
+  width: 100%;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1.5rem 2rem;
+}
+
+.contenedorPostres {
+  padding: 1rem 1.2rem;
+}
+
+.postre-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  padding: 1.2rem;
+  margin: 1.5rem 0;
+  background: var(--warm-white);
+  border: 1px solid var(--caramel-light);
+  border-radius: 12px;
+}
+
+.postre-form input {
+  font-family: 'Lora', serif;
+  font-size: 0.9rem;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: white;
+  outline: none;
+  flex: 1;
+  min-width: 140px;
+}
+
+.postre-form input:focus {
+  border-color: var(--caramel);
+}
+
+.postre-form input::placeholder {
+  color: var(--text-muted);
+}
+
+.postre-form button {
+  padding: 0.65rem 1.5rem;
+  background: var(--caramel);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Lora', serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.postre-form button:hover {
+  background: var(--chocolate);
+  transform: translateY(-1px);
+}
+
+
+.postre-completada {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.2rem;
+}
+
+.postre-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #e8e0d6;
+  transition: box-shadow 0.3s;
+}
+
+.postre-card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.postre-card.agotado {
+  opacity: 0.55;
+}
+
+.postre-foto {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.postre-card .contenedorPostres {
+  padding: 1rem 1.2rem;
+}
+
+.text-info h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  color: var(--chocolate);
+  margin-bottom: 0.2rem;
+}
+
+.precio-tag {
+  font-weight: 600;
+  color: var(--caramel);
+}
+
+.text-info p {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  margin-top: 0.2rem;
+}
+
+.contador-box {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+  justify-content: center;
+}
+
+.contador-box button {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ccc;
+  background: white;
+  border-radius: 50%;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contador-box button:hover:not(:disabled) {
+  background: var(--caramel);
+  color: white;
+  border-color: var(--caramel);
+}
+
+.contador-box button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.contador-box span {
+  font-weight: 600;
+  font-size: 1rem;
+  min-width: 24px;
+  text-align: center;
+}
+
+.postre-card small {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.stock-bajo {
+  color: var(--rose) !important;
+  font-weight: 600 !important;
+}
+
+.postre-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  vertical-align: middle;
+  margin: 0.3rem 0;
+}
+
+.postre-checkbox:checked {
+  background: var(--rose);
+  border-color: var(--rose);
+}
+
+.postre-checkbox:checked::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 0.7rem;
+}
+
+.btns {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0 1.2rem 1rem;
+  justify-content: flex-end;
+}
+
+.btns button {
+  font-family: 'Lora', serif;
+  font-size: 0.82rem;
+  padding: 0.4rem 1rem;
+  border: 2px solid var(--caramel-light);
+  background: transparent;
+  color: var(--caramel);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btns button:hover {
+  background: var(--caramel);
+  color: white;
+}
+
+.btns .btn-delete {
+  border-color: var(--rose-light);
+  color: var(--rose);
+}
+
+.btns .btn-delete:hover {
+  background: var(--rose);
+  color: white;
+}
+
+
+@media (max-width: 768px) {
+  .barra {
+    padding: 0.8rem 1rem;
+  }
+
+  #tituloPrincipal {
+    font-size: 1.4rem;
+  }
+
+  .postre-form {
+    flex-direction: column;
+  }
+
+  .postre-completada {
+    grid-template-columns: 1fr;
+  }
+
+  .contenedorGeneral {
+    padding: 0 1rem 2rem;
+  }
+}
